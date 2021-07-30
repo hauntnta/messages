@@ -1,0 +1,15 @@
+{
+    "name": "nta/messages",
+    "description": "core base messages",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "haunt",
+            "email": "haunt.nta@gmail.com"
+        }
+    ],
+    "require": {
+        "maatwebsite/excel": "^3.1"
+    }
+}
