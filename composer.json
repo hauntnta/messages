@@ -9,6 +9,11 @@
             "email": "haunt.nta@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "DevNta\\Messages\\": "src/"
+        }
+    },
     "require": {
         "maatwebsite/excel": "^3.1"
     }
