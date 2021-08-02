@@ -26,7 +26,6 @@ class LangSheetImport implements ToCollection, WithHeadingRow
     public function collection(Collection $collection)
     {
         $languages = config('nta_message.languages');
-        $baseLang = config('nta_message.sheet.base_lang');
         if (!empty($languages)) {
             foreach ($languages as $kLang => $lang) {
                 $filename = __DIR__ . '/../../resources/lang/' . $kLang . '/' . $this->sheetName . '.php';
