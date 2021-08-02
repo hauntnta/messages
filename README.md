@@ -17,21 +17,29 @@ php artisan vendor:publish --provider="DevNta\Messages\NtaMessageProvider" --tag
 #### Use Lang
 The default configuration of 2 languages is **English** and **Japanese**, if you want to add other languages, please add `languages` array of config `nta_message.php`.
 
-#### Set import length for each file
+#### Set name sheet of file for import each file
 ```php
 'sheet' => [
-    'base_lang' => [
-        'common' => [
-            'length' => [1, 65]
-        ]
-    ]
+    'language' => [
+        'common',
+        'login',
+        'forget_password',
+        'reset_password',
+        'user_info',
+        'account',
+        'bank_account',
+        'gender',
+        'title_signboard',
+        'guide_signboard',
+        'owner',
+        'partner',
+        'message',
+        'modal_confirm',
+    ],
+    'validation' => ['validation']
     ```
 ]
 ```
-> **_common:_** Tt is set to be the filename when adding a new {filename}.php
-
-> **_length:_** Length get value in column STT of sheet.
-
 
 #### Url file import
 if you don't want to use angular file of library, please setting ``path_url_file`` in file config ``nta_message.php``

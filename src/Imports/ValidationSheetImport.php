@@ -11,6 +11,19 @@ class ValidationSheetImport implements ToCollection, WithHeadingRow
 {
 
     /**
+     * @var
+     */
+    protected $sheetName;
+
+    /**
+     * @param $sheetName
+     */
+    public function __construct($sheetName)
+    {
+        $this->sheetName = $sheetName;
+    }
+
+    /**
      * @param Collection $collection
      */
     public function collection(Collection $collection)
