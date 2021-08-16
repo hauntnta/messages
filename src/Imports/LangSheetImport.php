@@ -23,16 +23,19 @@ class LangSheetImport implements ToCollection, WithHeadingRow
         $this->sheetName = $sheetName;
     }
 
+    /**
+     * @param Collection $collection
+     */
     public function collection(Collection $collection)
     {
         $languages = config('nta_message.languages');
         if (!empty($languages)) {
             foreach ($languages as $kLang => $lang) {
-                $filename = __DIR__ . '/../../resources/lang/' . $kLang . '/' . $this->sheetName . '.php';
+                $filename = __DIR__ . '/../../resources/lang/' . $kLang . '/nta_' . $this->sheetName . '.php';
                 if (!is_dir(dirname($filename))) {
                     mkdir(dirname($filename), 0755, true);
                 }
-                $commonFile = fopen(__DIR__ . '/../../resources/lang/' . $kLang . '/' . $this->sheetName . '.php', 'w');
+                $commonFile = fopen($filename, 'w');
                 $common = [];
                 foreach ($collection->toArray() as $key => $value) {
                     $context = $value[$lang['text_sheet_lang']] ?? '';
